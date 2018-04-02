@@ -181,12 +181,13 @@ class Tick extends Component {
     const { height, duration, rotateItems, text } = this.props;
 
     if (prevProps.text !== text) {
-      Animated.timing(this.state.animation, {
+      Animated.spring(this.state.animation, {
         toValue: getPosition({
           text: text,
           items: rotateItems,
           height,
         }),
+        friction: 5,
         duration,
         useNativeDriver: true,
       }).start();
