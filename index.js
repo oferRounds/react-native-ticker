@@ -83,7 +83,7 @@ class Ticker extends Component {
         {renderer({
           children: childs,
           textStyle,
-          height,
+          height: (height >= 0.5) ? (height - 0.5) : height,
           rotateTime,
           rotateItems: numberRange,
         })}
